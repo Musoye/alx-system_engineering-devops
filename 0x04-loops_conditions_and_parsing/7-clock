@@ -4,7 +4,7 @@ i=0
 while [ $i -le 24 ]
 do
   echo "Hour: $i"
-  j=0
+  j=1
   while [ $j -le 59 ]
   do
     echo "$j"
