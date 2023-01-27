@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # print fromone to 20 and some text
-i=0
+i=1
 while [ $i -le 20 ]
 do
   echo "$i"
