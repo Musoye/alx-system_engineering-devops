@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # printing Hours and minutes
 i=0
-while [ $i -le 24 ]
+while [ $i -le 12 ]
 do
   echo "Hour: $i"
   j=1
