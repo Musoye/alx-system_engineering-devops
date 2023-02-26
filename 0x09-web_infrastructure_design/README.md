@@ -1,1 +1,1 @@
-This is readme for the web infrastructure project
+This is a team project on Web Infrastructure.
