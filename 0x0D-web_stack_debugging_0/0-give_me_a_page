@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Debug a webstack application
+
+echo "ServerName localhost" >> /etc/apache2/apache2.conf
+sudo /etc/init.d/apache2 start
