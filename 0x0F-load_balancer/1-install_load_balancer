@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#installing and configuring HAProxy for load balancing
+
+sudo apt-get update
+sudo apt-get -y install --no-install-recommends software-properties-common
+sudo add-apt-repository ppa:vbernat/haproxy-2.4
+sudo apt-get -y install haproxy=2.4.\*
+
+musconfig=\
+"
+backend musoye-back
+        mode http
+        balance roundrobin
+        server 153875-web-01 18.210.17.186:80 check
+        server 153875-web-02 35.168.2.166:80 check
+frontend musoye-front
+        bind *:80
+        mode http
+        default_backend musoye-back
+"
+sudo echo "$musconfig" >> /etc/haproxy/haproxy.cfg
+if [ "$(pgrep -c haproxy)" -le 0 ]; then
+	sudo service haproxy start
+else
+	sudo sevice haproxy restart
+fi
