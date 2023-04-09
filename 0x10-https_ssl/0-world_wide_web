@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#get the information about domain
+
+sub_do=('www' 'lb-01' 'web-01' 'web-02')
+
+Digger() {
+    subdomain=$1
+    domain=$2
+
+    dig "$subdomain.$domain" | grep -A1 'ANSWER SECTION:' | tail -1 | awk -v s="$subdomain" 'BEGIN { FS = " " } ; { print "The subdomain " s " is a " $4 " record and points to " $5 }'
+}
+
+if [ $# -eq 1 ];
+then
+    domain="$1"
+    for i in "${sub_do[@]}"
+    do
+        Digger "$i" "$domain"
+    done
+elif [ $# -eq 2 ];
+then
+    domain=$1
+    sub=$2
+    Digger "$sub" "$domain"
+fi;
