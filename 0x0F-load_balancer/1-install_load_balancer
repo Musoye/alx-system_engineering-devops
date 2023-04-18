@@ -11,8 +11,8 @@ musconfig=\
 backend musoye-back
         mode http
         balance roundrobin
-        server 153875-web-01 18.210.17.186:80 check
-        server 153875-web-02 35.168.2.166:80 check
+        server 153875-web-01 100.26.142.48:80 check
+        server 153875-web-02 18.233.62.129:80 check
 frontend musoye-front
         bind *:80
         mode http
