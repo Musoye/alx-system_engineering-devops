@@ -10,7 +10,8 @@ if __name__ == "__main__":
         res = requests.get('{}/users/{}'.format(url, id)).json()
         res_todo = requests.get("{}/todos".format(url),
                                 params={"userId": id}).json()
-        task_comp = [t.get('title') for t in res_todo if t.get("completed") is True]
+        task_comp = [t.get('title') for t in res_todo
+                     if t.get("completed") is True]
         b = "Employee {} is done with tasks({}/{}):".format(
             res.get('name'), len(task_comp), len(res_todo))
         print(b)
