@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""import api from a url"""
+"""get all information about all user and their completed task"""
 import json
 import requests
 
