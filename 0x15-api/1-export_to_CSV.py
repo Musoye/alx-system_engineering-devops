@@ -10,7 +10,7 @@ if __name__ == "__main__":
         res = requests.get('{}/users/{}'.format(url, id)).json()
         res_todo = requests.get("{}/todos".format(url),
                                 params={"userId": id}).json()
-        name = res.get("name")
+        name = res.get("username")
         with open('{}.csv'.format(id), 'w') as apidata:
             for todo in res_todo:
                 apidata.write(
