@@ -24,5 +24,5 @@ if __name__ == "__main__":
                     res_todo
                 ))
         data["{}".format(id)] = user_data
-with open('todo_all_employees.json', 'w') as apidata:
-    json.dump(data, apidata)
+    with open('todo_all_employees.json', 'w') as apidata:
+        json.dump(data, apidata)
