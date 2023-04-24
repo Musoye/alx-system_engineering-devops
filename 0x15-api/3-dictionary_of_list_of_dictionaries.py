@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-"""get all information about all user and their completed task"""
+"""get all information about all user and their completed task
+and get all the information about the user and the todo taska and
+the todos task which the user have not done.
+You cannot kill me with documentation"""
 import json
 import requests
 
 if __name__ == "__main__":
     data = {}
-    for i in range(1,11):
+    for i in range(1, 11):
         id = i
         url = "https://jsonplaceholder.typicode.com"
         res = requests.get('{}/users/{}'.format(url, id)).json()
