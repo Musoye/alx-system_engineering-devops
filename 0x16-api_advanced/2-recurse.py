@@ -3,7 +3,7 @@
 import requests
 
 
-def recurse(subreddit, hot_list=[],after="", count=0):
+def recurse(subreddit, hot_list=[], after="", count=0):
     """recurse the value"""
     params = {
         'after': after,
@@ -11,8 +11,10 @@ def recurse(subreddit, hot_list=[],after="", count=0):
         'limit': 100
     }
     headers = {'User-Agent': 'Alx Task'}
-    url = 'http://www.reddit.com/r/{}/top/.json'.format(subreddit)
-    res = requests.get(url, params=params, headers=headers)
+    url = 'http://www.reddit.com/r/{}/top/.json'.format
+    (subreddit)
+    res = requests.get(url, params=params,
+                       headers=headers, allow_redirects=False)
     after = res.json().get('data').get('after')
     count += res.json().get('data').get('dist')
 
@@ -25,4 +27,3 @@ def recurse(subreddit, hot_list=[],after="", count=0):
         return recurse(subreddit, hot_list, after, count)
     else:
         return hot_list
-
