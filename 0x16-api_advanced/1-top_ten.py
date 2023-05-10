@@ -12,7 +12,7 @@ def top_ten(subreddit):
     headers = {'User-Agent': 'Reddit apI'}
     url = "http://www.reddit.com/r/{}/top/.json".format(subreddit)
     res = requests.get(url, params=params,
-                       headers=headers, allow_redirects=False)
+                       headers=headers)
     if res.status_code != 200:
         print('None')
         return

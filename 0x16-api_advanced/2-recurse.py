@@ -11,16 +11,15 @@ def recurse(subreddit, hot_list=[], after="", count=0):
         'limit': 100
     }
     headers = {'User-Agent': 'Alx Task'}
-    url = 'http://www.reddit.com/r/{}/top/.json'.format
-    (subreddit)
+    url = 'http://www.reddit.com/r/{}/top/.json'.format(subreddit)
     res = requests.get(url, params=params,
-                       headers=headers, allow_redirects=False)
-    after = res.json().get('data').get('after')
-    count += res.json().get('data').get('dist')
-
+                       headers=headers)
     if res.status_code >= 400:
         return None
-    resp = res.json().get('data').get('children')
+    result = res.json().get('data')
+    after = result.get('after')
+    count += result.get('dist')
+    resp = result.get('children')
     for child in resp:
         hot_list.append(child.get('data').get('title'))
     if after is not None:
