@@ -1,4 +1,4 @@
-![postmortem image](postmortem.gif)
+![postmortem image](https://github.com/Musoye/alx-system_engineering-devops/blob/main/0x19-postmortem/postmortem.gif)
 
 # Sever Requests Failure Report
 Last Month, it was reported that all the request made to our server is returning a 500 Error, all our services were down.
