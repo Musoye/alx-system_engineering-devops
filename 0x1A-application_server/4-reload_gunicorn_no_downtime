@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Gracefuuly reloads Gunicorn
+
+pkill -HUP -f gunicorn
